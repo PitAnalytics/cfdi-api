@@ -47,11 +47,10 @@ class ValidacionCfdiController extends Controller{
     $result=[];
     //
     $result['status']=$this->soap['validacion-cfdi']->validar($rfcEmisor,$rfcReceptor,$uuid,$total);
-
+    //
+    header("Access-Control-Allow-Origin: *");
     header('Content-Type','application/json');
-
     echo(json_encode($result));
-
 
   }
 
